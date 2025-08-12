@@ -7,8 +7,8 @@ const teamMembers = [
         role: "Founder & Developer",
         photo: "https://i.ibb.co/MDRC8dRp/image.png", // Replace with your photo
         linkedin: "https://linkedin.com/in/ranaji-dev",
-        twitter: "https://twitter.com/ranajitdas",
-        github: "https://github.com/ranajitdas",
+        twitter: "https://twitter.com/",
+        github: "https://github.com/ranajitchandra",
     },
     {
         name: "Sadia Rahman",
