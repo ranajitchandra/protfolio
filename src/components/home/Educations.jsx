@@ -16,12 +16,17 @@ export default function Education() {
 
                 {/* Education Card */}
                 <motion.div
-                    className="bg-base-100 border border-primary/20 rounded-xl shadow-lg p-6 md:p-8"
+                    className="bg-base-100 border border-primary/20 rounded-xl shadow-lg p-6 md:p-8 cursor-pointer"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
+                    whileHover={{
+                        scale: 1.03,
+                        boxShadow: "0 8px 20px rgba(99, 102, 241, 0.4)", // soft purple glow
+                    }}
+                    transition={{ duration: 0.4 }}
                     viewport={{ once: true }}
                 >
+
                     {/* Icon & Title */}
                     <div className="flex items-center gap-4 mb-4">
                         <FaGraduationCap className="text-3xl text-secondary" />

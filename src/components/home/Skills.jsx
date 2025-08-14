@@ -10,6 +10,7 @@ import {
     FaPhp,
     FaGitAlt,
     FaGithub,
+    FaDatabase,
 } from "react-icons/fa";
 
 import {
@@ -53,7 +54,7 @@ export default function Skills() {
         },
         {
             title: "Databases",
-            icon: <FaServer className="text-4xl text-primary" />,
+            icon: <FaDatabase className="text-4xl text-primary" />,
             skills: [
                 { name: "MySQL", icon: <SiMysql className="text-blue-700" /> },
                 { name: "MongoDB", icon: <SiMongodb className="text-green-600" /> },
@@ -93,6 +94,10 @@ export default function Skills() {
                         className="bg-base-100 rounded-xl p-6 shadow-md border border-base-300 hover:shadow-xl transition"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
+                        whileHover={{
+                            scale: 1.03,
+                            boxShadow: "0 8px 20px rgba(99, 102, 241, 0.4)", // soft purple glow
+                        }}
                         transition={{ duration: 0.5, delay: index * 0.2 }}
                         viewport={{ once: true }}
                     >

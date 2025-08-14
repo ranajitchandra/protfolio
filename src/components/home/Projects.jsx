@@ -23,7 +23,7 @@ export default function Projects() {
             title: "Garden World",
             image: "https://i.ibb.co.com/xt96WzyZ/g.png",
             description:
-                "A blogging platform with markdown editor, category filtering and user dashboard.",
+                "A blogging platform with markdown, category filtering and user dashboard.",
             features: [
                 "Product filtering and search",
                 "Cart & order history",
@@ -62,9 +62,13 @@ export default function Projects() {
                 {projects.map((project, index) => (
                     <motion.div
                         key={project.title}
-                        className="bg-base-200 rounded-xl overflow-hidden shadow-lg border border-base-300 hover:shadow-xl transition"
+                        className="relative bg-base-200 rounded-xl overflow-hidden shadow-lg border border-base-300 hover:shadow-xl transition"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
+                        whileHover={{
+                            scale: 1.03,
+                            boxShadow: "0 8px 20px rgba(99, 102, 241, 0.4)", // soft purple glow
+                        }}
                         transition={{ duration: 0.5, delay: index * 0.2 }}
                         viewport={{ once: true }}
                     >

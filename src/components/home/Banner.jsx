@@ -1,8 +1,8 @@
-import { FaPlay } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaPlay, FaTwitter } from "react-icons/fa";
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import developerSkills from "../../assets/developer_skills.json";
-
+import Typewriter from "typewriter-effect";
 
 export default function Banner() {
     return (
@@ -20,8 +20,26 @@ export default function Banner() {
 
                         {/* Placeholder for typed text animation */}
                         <h2 className="text-2xl font-medium text-gray-800">
-                            Full Stack Web Developer
+                            
+                            <Typewriter
+                                options={{
+                                    strings: ["Full Stack Web Developer"],
+                                    autoStart: true,
+                                    loop: true,
+                                }}
+                            />
                         </h2>
+                        <div className="flex space-x-6 text-secondary text-3xl pt-5">
+                            <a href="https://www.linkedin.com/in/ranajit-dev/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <FaLinkedin />
+                            </a>
+                            <a href="" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                                <FaTwitter />
+                            </a>
+                            <a href="https://github.com/ranajitchandra" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <FaGithub />
+                            </a>
+                        </div>
 
                         {/* Buttons */}
                         <div className="flex items-center justify-center lg:justify-start pt-8 gap-6">
@@ -49,16 +67,28 @@ export default function Banner() {
 
                     <div className="lg:w-1/2 flex justify-center">
                         <motion.div
-                            className="p-1 rounded-3xl border-2 border-orange-300 bg-purple-100 shadow-xl w-80"
-                            animate={{ y: [0, -15, 0] }}
-                            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                            whileHover={{
+                            className="p-1 rounded-3xl border-4 bg-purple-100 shadow-xl w-80"
+                            animate={{
+                                y: [0, -15, 0],
                                 borderColor: ["#fdba74", "#f472b6", "#60a5fa", "#fdba74"],
+                            }}
+                            transition={{
+                                y: {
+                                    duration: 3,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                },
+                                borderColor: {
+                                    duration: 6,
+                                    repeat: Infinity,
+                                    ease: "easeInOut",
+                                },
                             }}
                         >
                             <Lottie animationData={developerSkills} loop={true} />
                         </motion.div>
                     </div>
+
                 </div>
             </div>
         </section>

@@ -3,9 +3,9 @@ import { motion } from "framer-motion";
 
 const teamMembers = [
     {
-        name: "Ranajit chandra Das",
+        name: "Ranajit Chandra Das",
         role: "Founder & Developer",
-        photo: "https://i.ibb.co/MDRC8dRp/image.png", // Replace with your photo
+        photo: "https://i.ibb.co/MDRC8dRp/image.png",
         linkedin: "https://linkedin.com/in/ranaji-dev",
         twitter: "https://twitter.com/",
         github: "https://github.com/ranajitchandra",
@@ -40,10 +40,14 @@ export default function Team() {
                 {teamMembers.map(({ name, role, photo, linkedin, twitter, github }, i) => (
                     <motion.div
                         key={name}
-                        className="bg-base-200 rounded-xl shadow-lg p-6 flex flex-col items-center"
+                        className="bg-base-200 rounded-xl shadow-lg p-6 flex flex-col items-center cursor-pointer"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: i * 0.2 }}
+                        whileHover={{
+                            scale: 1.05,
+                            boxShadow: "0 8px 20px rgba(99, 102, 241, 0.4)", // soft purple glow
+                        }}
+                        transition={{ duration: 0.3, delay: i * 0.2 }}
                         viewport={{ once: true }}
                     >
                         <img
@@ -55,15 +59,36 @@ export default function Team() {
                         <p className="text-secondary/80 mb-4">{role}</p>
 
                         <div className="flex space-x-6 text-primary text-2xl">
-                            <a href={linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                            <motion.a
+                                href={linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="LinkedIn"
+                                whileHover={{ scale: 1.3, color: "#6366F1" }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
                                 <FaLinkedin />
-                            </a>
-                            <a href={twitter} target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                            </motion.a>
+                            <motion.a
+                                href={twitter}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="Twitter"
+                                whileHover={{ scale: 1.3, color: "#6366F1" }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
                                 <FaTwitter />
-                            </a>
-                            <a href={github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            </motion.a>
+                            <motion.a
+                                href={github}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label="GitHub"
+                                whileHover={{ scale: 1.3, color: "#6366F1" }}
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
                                 <FaGithub />
-                            </a>
+                            </motion.a>
                         </div>
                     </motion.div>
                 ))}

@@ -30,17 +30,28 @@ export default function AboutMe() {
                     transition={{ duration: 0.6, delay: 0.2 }}
                     viewport={{ once: true }}
                 >
-                    <h2 className="text-4xl font-bold mb-6 text-primary">About Me</h2>
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6 text-primary relative inline-block">
+                        About Me
+                        <span className="absolute -bottom-1 left-0 w-16 h-1 bg-primary rounded-full"></span>
+                    </h2>
 
                     <p className="text-lg leading-8 text-base-content/80 mb-4">
                         Hello! I'm a passionate and creative front-end and backend web developer, currently starting my professional journey.
                         As a fresher, I spend most of my time experimenting with new ideas, designing intuitive interfaces, and building web experiences that bring concepts to life.
                     </p>
 
-                    <p className="text-md text-base-content/70">
+                    <p className="text-md text-base-content/70 mb-6">
                         My portfolio reflects a mindset focused on innovation and the belief that great ideas start with curiosity and exploration.
                         I aim to grow by learning continuously and contributing to impactful projects—turning ideas into web applications clean, responsive, and user-friendly designs.
                     </p>
+                    <motion.a
+                        href="#contact"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        className="inline-block px-6 py-3 bg-primary text-white font-semibold rounded-full shadow-md hover:shadow-lg transition duration-300"
+                    >
+                        Let’s Connect
+                    </motion.a>
                 </motion.div>
             </div>
         </section>
